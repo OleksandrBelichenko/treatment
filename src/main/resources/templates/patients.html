@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients</title>
+</head>
+<body>
+<div id="wb_Form1" style="position:absolute;width:628px;height:431px;">
+
+    <form name="SiteSearch1_form" id="SiteSearch1_form" role="search" accept-charset="UTF-8"
+          method="get" action="/patient/getPatientsByFIO">
+        <div>
+            <input type="text" id="SiteSearch2"
+                   style="position:absolute;left:28px;top:22px;width:140px;height:16px;z-index:26;" name="name"
+                   value="" spellcheck="false" placeholder="Search name" role="searchbox">
+            <input type="text" id="SiteSearch1"
+                   style="position:absolute;left:216px;top:22px;width:138px;height:16px;z-index:28;" name="secondName"
+                   value="" spellcheck="false" placeholder="Search second name" role="searchbox">
+            <input type="text" id="SiteSearch3"
+                   style="position:absolute;left:397px;top:22px;width:138px;height:16px;z-index:29;" name="surname"
+                   value="" spellcheck="false" placeholder="Search surname" role="searchbox">
+            <button type="submit" id="as" style="position:absolute;left:200px;top:78px;width:170px;height:30px;z-index:27;">Search by name</button>
+        </div>
+    </form>
+
+    <form name="SiteSearch2_form" id="SiteSearch2_form" role="search" accept-charset="UTF-8"
+          method="get" action="/patient/getPatientsByDiagnosis">
+        <div>
+            <input type="text" id="SiteSearch4"
+                   style="position:absolute;left:216px;top:147px;width:138px;height:16px;z-index:30;" name="diagnosis"
+                   value="" spellcheck="false" placeholder="Search diagnosis" role="searchbox">
+
+            <button type="submit" id="ssss" style="position:absolute;left:200px;top:203px;width:170px;height:30px;z-index:31;">Search by diagnosis</button>
+        </div>
+    </form>
+
+    <form name="SiteSearch3_form" id="SiteSearch3_form" role="search" accept-charset="UTF-8"
+          method="get" action="/patient/getPatientsByFIO">
+        <div>
+            <button type="submit" id="qwe" style="position:absolute;left:200px;top:263px;width:170px;height:30px;z-index:31;">Search all</button>
+        </div>
+    </form>
+    <form method="get" action="/patient/all" style="position: absolute; left:11px;top:330px;">
+        <table style="width: 800px; border: 1px solid green">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Second name</th>
+                <th>Surname</th>
+                <th>Specializing</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${!patients.iterator().hasNext()}">
+                <td colspan="2"> No patients</td>
+            </tr>
+            <tr th:each="patient : ${patients}">
+                <td><span th:text="${patient.name}">  </span></td>
+                <td><span th:text="${patient.secondName}">  </span></td>
+                <td><span th:text="${patient.surname}">  </span></td>
+                <td><span th:text="${patient.diagnosis}">  </span></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <form name="SiteSearch122_form" id="SiteSearch122_form" role="search" accept-charset="UTF-8"
+          method="get" action="/addPatient">
+        <div>
+            <button type="submit" style="position:absolute;left:640px;top:22px;width:170px;height:30px;z-index:27;">Add patient</button>
+        </div>
+    </form>
+
+    <form name="SiteSearch122_form" id="SiteSearch122_fvcvorm" role="search" accept-charset="UTF-8"
+          method="get" action="/main">
+        <div>
+            <button type="submit" id="exit" style="position:absolute;left:640px;top:62px;width:170px;height:30px;z-index:27;">Back</button>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>
+

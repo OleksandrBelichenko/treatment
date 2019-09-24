@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new patient</title>
+</head>
+<body>
+
+
+<div id="wb_Form2" style="position:absolute;width:628px;height:431px;">
+    <form name="Form1" enctype="multipart/form-data" id="Form1" method="post" action="/patient/create">
+        <input name="name" type="text" id="SiteSearch1"
+               style="position:absolute;left:145px;top:22px;width:140px;height:16px;z-index:32;"
+               value="" spellcheck="false" placeholder="Search this website" role="searchbox" required="required">
+        <input name="secondName" type="text" id="SiteSearch2"
+               style="position:absolute;left:146px;top:64px;width:138px;height:16px;z-index:33;"
+               value="" spellcheck="false" placeholder="Search this website" role="searchbox" required="required">
+        <input name="diagnosis" type="text" id="SiteSearch3"
+               style="position:absolute;left:146px;top:147px;width:138px;height:16px;z-index:34;"
+               value="" spellcheck="false" placeholder="Search this website" role="searchbox" required="required">
+        <input name="surname" type="text" id="SiteSearch4"
+               style="position:absolute;left:146px;top:106px;width:138px;height:16px;z-index:35;"
+               value="" spellcheck="false" placeholder="Search this website" role="searchbox" required="required">
+        <button type="submit" id="Button1" name="" value=""
+                style="position:absolute;left:100px;top:203px;width:120px;height:50px;z-index:36;">Add a new patient</button>
+        <label id="Label1"
+               style="position:absolute;left:14px;top:14px;width:109px;height:34px;line-height:34px;z-index:37;">Name</label>
+        <label id="Label2"
+               style="position:absolute;left:14px;top:56px;width:109px;height:34px;line-height:34px;z-index:38;">Second
+            name</label>
+        <label id="Label3"
+               style="position:absolute;left:14px;top:98px;width:109px;height:34px;line-height:34px;z-index:39;">Surname</label>
+        <label id="Label4"
+               style="position:absolute;left:14px;top:140px;width:109px;height:34px;line-height:34px;z-index:40;">Diagnosis</label>
+    </form>
+</div>
+
+</body>
+</html>

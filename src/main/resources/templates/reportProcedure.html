@@ -1,0 +1,67 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Report by procedure</title>
+</head>
+<body>
+<div id="Html1" style="position:absolute;left:0px;top:0px;width:970px;height:712px;z-index:13">
+</div>
+<div id="wb_Form1" style="position:absolute;left:0px;top:50px;width:496px;height:304px;z-index:14;
+                          border: 3px solid rgba(0,255,0,0); background-color: white; left: 35%">
+    <FORM method="get" action="/work/getWorks">
+
+        <div style="position:absolute;left:123px;top:2px;width:250px;height:16px;z-index:0;">
+            <select name="procedureName" id="dropSpec" style="width: 250px">
+                <option th:each="procedure : ${procedures}" th:value="${procedure.name}" th:text="${procedure.name}"></option>
+            </select>
+        </div>
+
+        <label style="position:absolute;left:30%;top:-50px;font-size: 24px;z-index:5;">Search work by procedure</label>
+        <label id="Label1"
+               style="position:absolute;left:27px;top:2px;width:92px;height:16px;line-height:16px;z-index:5;">Procedure:</label>
+
+        <input type="submit" id="Button1" name="" value="Search"
+               style="position:absolute;left:180px;top:240px;width:120px;height:35px;z-index:10;
+                      ">
+    </FORM>
+
+    <form method="get" action="/work/getWorks" style="position: absolute; left:-120px;top:330px;">
+        <table style="width: 800px; border: 1px solid green">
+            <thead>
+            <tr>
+                <th>Material</th>
+                <th>Medication</th>
+                <th>Doctor</th>
+                <th>Patient</th>
+                <th>Income</th>
+                <th>Consumption</th>
+                <th>Profit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${!works.iterator().hasNext()}">
+                <td colspan="2"> No works</td>
+            </tr>
+            <tr th:each="work : ${works}">
+                <td><span th:text="${work.assigments.material.name}">  </span></td>
+                <td><span th:text="${work.assigments.medication.name}">  </span></td>
+                <td><span th:text="${work.assigments.doctor.name} + ' ' + ${work.assigments.doctor.surname}">  </span></td>
+                <td><span th:text="${work.assigments.patient.name} + ' ' + ${work.assigments.patient.surname}">  </span></td>
+                <td><span th:text="${work.income}">  </span></td>
+                <td><span th:text="${work.consumption}">  </span></td>
+                <td><span th:text="${work.profit}">  </span></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <form name="SiteSearch122_form" id="SiteSearch122_form" role="search" accept-charset="UTF-8"
+          method="get" action="/reports">
+        <div>
+            <button type="submit" id="exit" style="position:absolute;left:510px;top:22px;width:170px;height:30px;z-index:27;">Back</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

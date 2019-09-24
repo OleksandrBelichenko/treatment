@@ -1,0 +1,69 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Add a new assigment</title>
+</head>
+<body>
+<div id="Html1" style="position:absolute;left:0px;top:0px;width:970px;height:712px;z-index:13">
+</div>
+<div id="wb_Form1" style="position:absolute;left:0px;top:50px;width:496px;height:304px;z-index:14;
+                          border: 3px solid rgba(0,255,0,0); background-color: white; left: 35%">
+    <FORM method="post" action="/assigments/addAssigment">
+
+        <div style="position:absolute;left:123px;top:2px;width:250px;height:16px;z-index:0;">
+            <select name="doctor" id="dropSpec" style="width: 250px">
+                <option th:each="doctor : ${doctors}" th:text="${doctor.name} + ' ' + ${doctor.secondName} + ' ' + ${doctor.surname}"></option>
+            </select>
+        </div>
+
+        <div style="position:absolute;left:123px;top:42px;width:250px;height:16px;z-index:0;">
+            <select name="patient" id="dropOperator" style="width: 250px">
+                <option th:each="patient : ${patients}" th:text="${patient.name} + ' ' + ${patient.secondName} + ' ' + ${patient.surname}"></option>
+            </select>
+        </div>
+
+
+        <div style="position:absolute;left:123px;top:79px;width:256px;height:16px;z-index:0;">
+        <select name="procedureName"id="dropOperatodr"  style="width: 250px">
+            <option th:each="procedure : ${procedures}" th:value="${procedure.name}" th:text="${procedure.name}"></option>
+        </select>
+        </div>
+
+        <div style="position:absolute;left:123px;top:119px;width:256px;height:16px;z-index:0;">
+            <select name="materialName" id="dropOperatod44r" style="width: 250px">
+                <option th:each="material : ${materials}" th:value="${material.name}" th:text="${material.name}"></option>
+            </select>
+        </div>
+
+        <div style="position:absolute;left:123px;top:159px;width:256px;height:16px;z-index:0;">
+            <select name="medicationName" id="dropOperatod434r" style="width: 250px">
+                <option th:each="medication : ${medications}" th:value="${medication.name}" th:text="${medication.name}"></option>
+            </select>
+        </div>
+
+        <div style="position:absolute;left:123px;top:199px;width:256px;height:16px;z-index:0;">
+        <input name="date" type="date" id="SiteSearch4"
+               value="" spellcheck="false" placeholder="Search this website" role="searchbox" required="required">
+        </div>
+        <label style="position:absolute;left:30%;top:-50px;font-size: 24px;z-index:5;">Add new assigment:</label>
+        <label id="Label1"
+               style="position:absolute;left:27px;top:2px;width:92px;height:16px;line-height:16px;z-index:5;">Doctor:</label>
+        <label id="Label5"
+               style="position:absolute;left:27px;top:42px;width:92px;height:16px;line-height:16px;z-index:5;">Patient:</label>
+        <label id="Label2"
+               style="position:absolute;left:27px;top:79px;width:98px;height:16px;line-height:16px;z-index:6;">Procedure:</label>
+        <label id="Label3"
+               style="position:absolute;left:27px;top:121px;width:79px;height:16px;line-height:16px;z-index:7;">Material:</label>
+        <label id="Label55"
+               style="position:absolute;left:27px;top:161px;width:79px;height:16px;line-height:16px;z-index:7;">Medications:</label>
+        <label id="Labelh55"
+               style="position:absolute;left:27px;top:201px;width:79px;height:16px;line-height:16px;z-index:7;">Date:</label>
+        <input type="submit" id="Button1" name="" value="Add"
+               style="position:absolute;left:180px;top:240px;width:120px;height:35px;z-index:10;
+                      ">
+
+    </FORM>
+</div>
+</body>
+</html>
